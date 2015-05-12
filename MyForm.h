@@ -366,6 +366,7 @@ namespace Regedit {
 			this->label3->TabIndex = 25;
 			this->label3->Text = L"Введите имя";
 			 
+
 			// button6
 			
 			this->button6->Location = System::Drawing::Point(297, 222);
