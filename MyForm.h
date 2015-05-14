@@ -64,6 +64,7 @@ namespace Regedit {
 
 
 
+
 	private: System::Windows::Forms::Button^  button4;
 	private: System::Windows::Forms::Label^  label2;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^  Column1;
