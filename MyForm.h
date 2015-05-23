@@ -421,3 +421,371 @@ namespace Regedit {
 
 
 //  файлик add о.о
+
+#pragma endregion
+
+	private: System::Void button1_Click(System::Object^  sender, System::EventArgs^  e) {
+
+			
+			 }
+
+	private: System::Void label1_Click(System::Object^  sender, System::EventArgs^  e) {
+			 }
+	private: System::Void MyForm_Load(System::Object^  sender, System::EventArgs^  e) {
+				 
+				 // creating name for section
+				 String ^st = Registry::ClassesRoot->Name; 
+				 String ^st_2 = Registry::CurrentConfig->Name;
+				 String ^st_3 = Registry::CurrentUser->Name;
+				 String ^st_4 = Registry::Users->Name;
+				 String ^st_5 = Registry::LocalMachine->Name;
+
+
+
+		
+				 // view name section
+				 TreeNode ^node = treeView1->Nodes->Add(st);
+				 
+				 array <String^>^stSubSection = Registry::ClassesRoot->GetSubKeyNames();
+				// String ^subSection = stSubSection[1];
+				 //RegistryKey^ str = Registry::CurrentUser->OpenSubKey("Console");
+
+				// array <String^> ^stt = str->GetSubKeyNames();
+
+				 array <String^>^ str;
+				 //MessageBox::Show(stt[0] + " sdrg");
+				 // view content section
+				 for(int i(0); i < 10; i++)
+				 {
+					 //node->Nodes->Add(myArray[i]);
+					 //node->Nodes->Add(stSubSection[i]);
+					 RegistryKey^ key = Registry::ClassesRoot->OpenSubKey(stSubSection[i]);
+					 str = key->GetSubKeyNames();
+
+					 if(str->Length > 0)
+					 {
+						 node = treeView1->Nodes->Add(stSubSection[i]);
+						 						 
+						 for(int ii(0); ii < str->Length; ii++)
+						 {
+							 node->Nodes->Add(str[ii]);
+					 
+						 }
+				    }
+					 else
+					 {
+					 
+						 node->Nodes->Add(stSubSection[i]);
+					 }
+				 }
+				 
+				/*for(int i(0); i < stSubSection->Length; i++)
+				 {
+					 node->Nodes->Add(stSubSection[i]);
+				 }*/
+
+				 TreeNode ^node_2 = treeView1->Nodes->Add(st_2);
+				 array <String^>^stSubSection_2 = Registry::CurrentConfig->GetSubKeyNames();
+
+				 for(int i(0); i < 2; i++)
+				 {
+					 //node->Nodes->Add(myArray[i]);
+					 //node->Nodes->Add(stSubSection[i]);
+					 RegistryKey^ key_2 = Registry::CurrentConfig->OpenSubKey(stSubSection_2[i]);
+					 str = key_2->GetSubKeyNames();
+
+					 if(str->Length > 0)
+					 {
+						 node_2 = treeView1->Nodes->Add(stSubSection_2[i]);
+						 
+
+						 for(int ii(0); ii < str->Length; ii++)
+						 {
+							 node_2->Nodes->Add(str[ii]);
+					 
+						 }
+				    }
+					 else
+					 {
+					 
+						 node_2->Nodes->Add(stSubSection_2[i]);
+					 }
+				 }
+				 
+
+				 TreeNode ^node_3 = treeView1->Nodes->Add(st_3);
+				 array <String^>^stSubSection_3 = Registry::CurrentUser->GetSubKeyNames();
+
+				 for(int i(0); i < 10; i++)
+				 {
+					 //node->Nodes->Add(myArray[i]);
+					 //node->Nodes->Add(stSubSection[i]);
+					 RegistryKey^ key_3 = Registry::CurrentUser->OpenSubKey(stSubSection_3[i]);
+					 str = key_3->GetSubKeyNames();
+
+					 if(str->Length > 0)
+					 {
+						 node_3 = treeView1->Nodes->Add(stSubSection_3[i]);
+						 
+
+						 for(int ii(0); ii < str->Length; ii++)
+						 {
+							 node_3->Nodes->Add(str[ii]);
+					 
+						 }
+				    }
+					 else
+					 {
+					 
+						 node_3->Nodes->Add(stSubSection_3[i]);
+					 }
+				 }
+				 
+
+				 TreeNode ^node_4 = treeView1->Nodes->Add(st_4);
+				 array <String^>^stSubSection_4 = Registry::Users->GetSubKeyNames();
+
+				 for(int i(0); i < 5; i++)
+				 {
+					
+					 if(str->Length > 0)
+					 {
+						 node_4 = treeView1->Nodes->Add(stSubSection_4[i]);
+						 
+						 for(int ii(0); ii < str->Length; ii++)
+						 {
+							 node_4->Nodes->Add(str[ii])->BackColor;
+					 
+						 }
+				    }
+					 else
+					 {
+					 
+						 node_4->Nodes->Add(stSubSection_4[i]);
+					 }
+				 }
+				 
+
+				 TreeNode ^node_5 = treeView1->Nodes->Add(st_5);
+				 array <String^>^stSubSection_5 = Registry::LocalMachine->GetSubKeyNames();
+
+				 for(int i(0); i < 5; i++)
+				 {
+					
+
+					 if(str->Length > 0)
+					 {
+						 node_5 = treeView1->Nodes->Add(stSubSection_5[i]);
+						 
+
+						 for(int ii(0); ii < str->Length; ii++)
+						 {
+							 node_5->Nodes->Add(str[ii]);
+					 
+						 }
+				    }
+					 else
+					 {
+					 
+						 node_5->Nodes->Add(stSubSection_5[i]);
+					 }
+				 }	 
+
+			 }
+
+private: System::Void файлToolStripMenuItem_Click(System::Object^  sender, System::EventArgs^  e) {
+		 }
+private: System::Void openFileDialog1_FileOk(System::Object^  sender, System::ComponentModel::CancelEventArgs^  e) {
+
+
+
+		 }
+private: System::Void menuStrip1_ItemClicked(System::Object^  sender, System::Windows::Forms::ToolStripItemClickedEventArgs^  e) {
+		 }
+private: System::Void button2_Click(System::Object^  sender, System::EventArgs^  e) {
+
+			 int numberSection = 1;
+			 int result;
+			
+			 dataGridView1->RowCount = 10;
+			 array <String^>^stSubSection;
+
+			 if(radioButton1->Checked == true)
+			 {
+				 numberSection = 1;
+			 }
+			 else
+				 if(radioButton2->Checked == true)
+				 {
+					 numberSection = 2;
+				 }
+				 else
+					 if(radioButton3->Checked == true)
+					 {
+						 numberSection = 3;
+					 }
+					 else
+						 if(radioButton4->Checked == true)
+						{
+							numberSection = 4;
+						}
+						else
+						{
+							numberSection = 5;
+						}
+
+			 switch (numberSection)
+			 {
+			 case 1:
+				 {
+					stSubSection = Registry::CurrentUser->GetSubKeyNames();
+					break;
+				 }
+			 case 2:
+				 {
+					//dataGridView1->RowCount = 10;
+					stSubSection = Registry::LocalMachine->GetSubKeyNames();
+					break;
+				}
+			 case 3:
+				 {
+					 //dataGridView1->RowCount = 10;
+					 stSubSection = Registry::ClassesRoot->GetSubKeyNames();
+					 break;
+				 }
+			 case 4:
+				 {
+					 //dataGridView1->RowCount = 10;
+					 stSubSection = Registry::CurrentConfig->GetSubKeyNames();
+					 break; 
+				 }
+			case 5:
+				 {
+					 //dataGridView1->RowCount = 10;
+					 stSubSection = Registry::Users->GetSubKeyNames();
+					 break; 
+				 }
+
+			 }
+
+			 String ^st = textBox2->Text;
+
+			int indexRows = 0;
+			int lengthArray = stSubSection->Length;
+
+
+			for(int i(0); i < lengthArray; i++)
+				if((Regex::IsMatch(stSubSection[i], st)) && (indexRows < 10))
+				{
+					dataGridView1->Rows[indexRows]->Cells[0]->Value = stSubSection[i];
+					indexRows++;
+				}
+		
+		 }
+private: System::Void справкаToolStripMenuItem_Click(System::Object^  sender, System::EventArgs^  e) {
+						
+			 MessageBox::Show("Курсовой проект «Редактор реестра с возможностью поиска по регулярным выражениям»по дисциплине «Системное программное обеспечение вычислительных машин»");
+			 
+
+		 }
+private: System::Void button1_Click_1(System::Object^  sender, System::EventArgs^  e) {
+			 
+			 array<String^>^ arrayHelp;
+			
+			 
+			 String ^fileName = "S:\\Учеба (Универ)\\4 семестр\\Курсач СПОВМ\\Курсач\\Help.txt";
+
+
+			 //dataGridView2->RowCount = 10;
+			 StreamReader ^file = File::OpenText(fileName);
+	
+			 
+			 String ^str;
+			 char symbol;
+			 symbol = textBox1->Text[1];
+
+
+			 while ((str = file->ReadLine()) != nullptr)
+				 if(str[1] == symbol)
+				 {
+					 label2->Text = str;
+					 break;					
+				 }
+
+			 //String ^str;
+
+
+			 //while ((str = file->ReadLine()) != ch)
+			 //{
+
+			 //}
+			
+		 }		
+			
+private: System::Void radioButton4_CheckedChanged(System::Object^  sender, System::EventArgs^  e) {
+		 }
+private: System::Void button4_Click(System::Object^  sender, System::EventArgs^  e) {
+
+			 saveFileDialog1->ShowDialog();
+		 }
+private: System::Void выгрузитьКустToolStripMenuItem_Click(System::Object^  sender, System::EventArgs^  e) {
+
+			
+			 saveFileDialog1->ShowDialog();
+		 }
+private: System::Void загрузитьКустToolStripMenuItem_Click(System::Object^  sender, System::EventArgs^  e) {
+
+			  openFileDialog1->ShowDialog();
+		 }
+private: System::Void выходToolStripMenuItem_Click(System::Object^  sender, System::EventArgs^  e) {
+
+			Application::Exit();
+
+
+		 }
+private: System::Void radioButton6_CheckedChanged(System::Object^  sender, System::EventArgs^  e) {
+		  
+		 
+		 }
+
+private: System::Void treeView1_AfterSelect(System::Object^  sender, System::Windows::Forms::TreeViewEventArgs^  e) {
+
+			 
+
+		 }
+private: System::Void button3_Click(System::Object^  sender, System::EventArgs^  e) {
+
+			 TreeNode ^node = treeView1->SelectedNode;
+			 if(node != nullptr)
+			 {
+				 treeView1->Nodes->Remove(node);
+			 
+			 }
+			
+
+		 }
+private: System::Void button5_Click(System::Object^  sender, System::EventArgs^  e) {
+
+			 TreeNode ^node = treeView1->SelectedNode;
+
+			
+			 node->Text = textBox3->Text;
+
+			 
+
+		 }
+private: System::Void button6_Click(System::Object^  sender, System::EventArgs^  e) {
+
+			 TreeNode ^node = treeView1->Nodes->Add(textBox3->Text);
+			
+
+		 }
+private: System::Void textBox2_TextChanged(System::Object^  sender, System::EventArgs^  e) {
+		 }
+private: System::Void radioButton1_CheckedChanged(System::Object^  sender, System::EventArgs^  e) {
+		 }
+private: System::Void dataGridView1_CellContentClick(System::Object^  sender, System::Windows::Forms::DataGridViewCellEventArgs^  e) {
+		 }
+};
+
+}
