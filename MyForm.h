@@ -20,6 +20,7 @@ namespace Regedit {
 	
 
 
+	// <summary>
 
 	public ref class MyForm : public System::Windows::Forms::Form
 	{
@@ -27,12 +28,12 @@ namespace Regedit {
 		MyForm(void)
 		{
 			InitializeComponent();
-	
+		
 		}
 
 	protected:
-
-	// Освободить все используемые ресурсы.
+	
+		// Освободить все используемые ресурсы.
 
 		~MyForm()
 		{
@@ -64,7 +65,6 @@ namespace Regedit {
 
 
 
-
 	private: System::Windows::Forms::Button^  button4;
 	private: System::Windows::Forms::Label^  label2;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^  Column1;
@@ -87,12 +87,11 @@ namespace Regedit {
 	protected: 
 
 	private:
-
+	
 		System::ComponentModel::Container ^components;
 
 #pragma region Windows Form Designer generated code
-
-
+	
 		void InitializeComponent(void)
 		{
 			System::ComponentModel::ComponentResourceManager^  resources = (gcnew System::ComponentModel::ComponentResourceManager(MyForm::typeid));
@@ -129,58 +128,60 @@ namespace Regedit {
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->pictureBox1))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->dataGridView1))->BeginInit();
 			this->SuspendLayout();
-	
+
+			// 
+			
 			this->label1->AutoSize = true;
 			this->label1->Location = System::Drawing::Point(84, 180);
 			this->label1->Name = L"label1";
 			this->label1->Size = System::Drawing::Size(0, 13);
 			this->label1->TabIndex = 2;
 			this->label1->Click += gcnew System::EventHandler(this, &MyForm::label1_Click);
+
+			// 
 			
-			// treeView1
-		
 			this->treeView1->Location = System::Drawing::Point(0, 27);
 			this->treeView1->Name = L"treeView1";
 			this->treeView1->Size = System::Drawing::Size(184, 304);
 			this->treeView1->TabIndex = 4;
 			this->treeView1->AfterSelect += gcnew System::Windows::Forms::TreeViewEventHandler(this, &MyForm::treeView1_AfterSelect);
-			
-			// menuStr.
-			
+
+			// 
+		
 			this->menuStrip1->Items->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(2) {this->файлToolStripMenuItem, 
-				this->справкаToolStripMenuItem});
+			this->справкаToolStripMenuItem});
 			this->menuStrip1->Location = System::Drawing::Point(0, 0);
 			this->menuStrip1->Name = L"menuStrip1";
 			this->menuStrip1->Size = System::Drawing::Size(623, 24);
 			this->menuStrip1->TabIndex = 5;
 			this->menuStrip1->Text = L"menuStrip1";
 			this->menuStrip1->ItemClicked += gcnew System::Windows::Forms::ToolStripItemClickedEventHandler(this, &MyForm::menuStrip1_ItemClicked);
-		
-			// файлToolStripMenuItem
+
+			// 
 			
 			this->файлToolStripMenuItem->DropDownItems->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(3) {this->загрузитьКустToolStripMenuItem, 
-				this->выгрузитьКустToolStripMenuItem, this->выходToolStripMenuItem});
+			this->выгрузитьКустToolStripMenuItem, this->выходToolStripMenuItem});
 			this->файлToolStripMenuItem->Name = L"файлToolStripMenuItem";
 			this->файлToolStripMenuItem->Size = System::Drawing::Size(48, 20);
 			this->файлToolStripMenuItem->Text = L"Файл";
 			this->файлToolStripMenuItem->Click += gcnew System::EventHandler(this, &MyForm::файлToolStripMenuItem_Click);
-			 
+			
 			// загрузитьКустToolStripMenuItem
-			 
+			
 			this->загрузитьКустToolStripMenuItem->Name = L"загрузитьКустToolStripMenuItem";
 			this->загрузитьКустToolStripMenuItem->Size = System::Drawing::Size(157, 22);
 			this->загрузитьКустToolStripMenuItem->Text = L"Загрузить куст";
 			this->загрузитьКустToolStripMenuItem->Click += gcnew System::EventHandler(this, &MyForm::загрузитьКустToolStripMenuItem_Click);
-			 
+			
 			// выгрузитьКустToolStripMenuItem
-			 
+			
 			this->выгрузитьКустToolStripMenuItem->Name = L"выгрузитьКустToolStripMenuItem";
 			this->выгрузитьКустToolStripMenuItem->Size = System::Drawing::Size(157, 22);
 			this->выгрузитьКустToolStripMenuItem->Text = L"Выгрузить куст";
 			this->выгрузитьКустToolStripMenuItem->Click += gcnew System::EventHandler(this, &MyForm::выгрузитьКустToolStripMenuItem_Click);
 			 
 			// выходToolStripMenuItem
-			 
+			
 			this->выходToolStripMenuItem->Name = L"выходToolStripMenuItem";
 			this->выходToolStripMenuItem->Size = System::Drawing::Size(157, 22);
 			this->выходToolStripMenuItem->Text = L"Выход";
@@ -192,9 +193,9 @@ namespace Regedit {
 			this->справкаToolStripMenuItem->Size = System::Drawing::Size(65, 20);
 			this->справкаToolStripMenuItem->Text = L"Справка";
 			this->справкаToolStripMenuItem->Click += gcnew System::EventHandler(this, &MyForm::справкаToolStripMenuItem_Click);
-			 
-			// pictureBox1 ^^
-			 
+			
+			//  
+
 			this->pictureBox1->Image = (cli::safe_cast<System::Drawing::Image^  >(resources->GetObject(L"pictureBox1.Image")));
 			this->pictureBox1->Location = System::Drawing::Point(190, 27);
 			this->pictureBox1->Name = L"pictureBox1";
@@ -203,20 +204,20 @@ namespace Regedit {
 			this->pictureBox1->TabIndex = 6;
 			this->pictureBox1->TabStop = false;
 			 
-			// openFileDialog1
-			
+			// 
+			 
 			this->openFileDialog1->FileName = L"openFileDialog1";
 			this->openFileDialog1->FileOk += gcnew System::ComponentModel::CancelEventHandler(this, &MyForm::openFileDialog1_FileOk);
 			
-			// textBox1
-			
+			//
+
 			this->textBox1->Location = System::Drawing::Point(423, 27);
 			this->textBox1->Multiline = true;
 			this->textBox1->Name = L"textBox1";
 			this->textBox1->Size = System::Drawing::Size(100, 20);
 			this->textBox1->TabIndex = 7;
-			
-			// button1
+			 
+			//
 			 
 			this->button1->Location = System::Drawing::Point(529, 27);
 			this->button1->Name = L"button1";
@@ -225,9 +226,9 @@ namespace Regedit {
 			this->button1->Text = L"Справка";
 			this->button1->UseVisualStyleBackColor = true;
 			this->button1->Click += gcnew System::EventHandler(this, &MyForm::button1_Click_1);
-			
-			// button2
-			
+			 
+			//
+			 
 			this->button2->Location = System::Drawing::Point(529, 110);
 			this->button2->Name = L"button2";
 			this->button2->Size = System::Drawing::Size(75, 23);
@@ -235,9 +236,9 @@ namespace Regedit {
 			this->button2->Text = L"Искать";
 			this->button2->UseVisualStyleBackColor = true;
 			this->button2->Click += gcnew System::EventHandler(this, &MyForm::button2_Click);
-			
-			// textBox2
 			 
+			// 
+			
 			this->textBox2->Location = System::Drawing::Point(423, 110);
 			this->textBox2->Multiline = true;
 			this->textBox2->Name = L"textBox2";
@@ -245,8 +246,8 @@ namespace Regedit {
 			this->textBox2->TabIndex = 10;
 			this->textBox2->TextChanged += gcnew System::EventHandler(this, &MyForm::textBox2_TextChanged);
 			
-			// dataGridView1
-			 
+			// 
+
 			this->dataGridView1->AllowUserToOrderColumns = true;
 			this->dataGridView1->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
 			this->dataGridView1->Columns->AddRange(gcnew cli::array< System::Windows::Forms::DataGridViewColumn^  >(1) {this->Column1});
@@ -257,12 +258,12 @@ namespace Regedit {
 			this->dataGridView1->CellContentClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &MyForm::dataGridView1_CellContentClick);
 			 
 			// Column1
-			
+			 
 			this->Column1->HeaderText = L"Имя";
 			this->Column1->Name = L"Column1";
-			
-			// button4
 			 
+			// 
+			
 			this->button4->Location = System::Drawing::Point(0, 337);
 			this->button4->Name = L"button4";
 			this->button4->Size = System::Drawing::Size(184, 46);
@@ -271,16 +272,16 @@ namespace Regedit {
 			this->button4->UseVisualStyleBackColor = true;
 			this->button4->Click += gcnew System::EventHandler(this, &MyForm::button4_Click);
 			
-			// label2
+			// 
 			
 			this->label2->AutoSize = true;
 			this->label2->Location = System::Drawing::Point(423, 62);
 			this->label2->Name = L"label2";
 			this->label2->Size = System::Drawing::Size(0, 13);
 			this->label2->TabIndex = 16;
-			
-			// radioButton3
 			 
+			// 
+			
 			this->radioButton3->AutoSize = true;
 			this->radioButton3->Location = System::Drawing::Point(423, 176);
 			this->radioButton3->Name = L"radioButton3";
@@ -289,8 +290,8 @@ namespace Regedit {
 			this->radioButton3->Text = L"ClassesRoot";
 			this->radioButton3->UseVisualStyleBackColor = true;
 			 
-			// radioButton4
-			 
+			// 
+			
 			this->radioButton4->AutoSize = true;
 			this->radioButton4->Location = System::Drawing::Point(423, 199);
 			this->radioButton4->Name = L"radioButton4";
@@ -299,9 +300,9 @@ namespace Regedit {
 			this->radioButton4->Text = L"CurrentConfig";
 			this->radioButton4->UseVisualStyleBackColor = true;
 			this->radioButton4->CheckedChanged += gcnew System::EventHandler(this, &MyForm::radioButton4_CheckedChanged);
-			 
-			// radioButton1
-			/
+			
+			//
+			
 			this->radioButton1->AutoSize = true;
 			this->radioButton1->Location = System::Drawing::Point(423, 136);
 			this->radioButton1->Name = L"radioButton1";
@@ -311,7 +312,7 @@ namespace Regedit {
 			this->radioButton1->UseVisualStyleBackColor = true;
 			this->radioButton1->CheckedChanged += gcnew System::EventHandler(this, &MyForm::radioButton1_CheckedChanged);
 			 
-			// radioButton2
+			// 
 			 
 			this->radioButton2->AutoSize = true;
 			this->radioButton2->Location = System::Drawing::Point(423, 155);
@@ -320,8 +321,8 @@ namespace Regedit {
 			this->radioButton2->TabIndex = 20;
 			this->radioButton2->Text = L"LocalMachine";
 			this->radioButton2->UseVisualStyleBackColor = true;
-			
-			// radioButton5
+			 
+			// 
 			 
 			this->radioButton5->AutoSize = true;
 			this->radioButton5->Location = System::Drawing::Point(423, 222);
@@ -330,9 +331,9 @@ namespace Regedit {
 			this->radioButton5->TabIndex = 21;
 			this->radioButton5->Text = L"Uses";
 			this->radioButton5->UseVisualStyleBackColor = true;
-			
+			 
 			// button3
-			
+			 
 			this->button3->Location = System::Drawing::Point(190, 222);
 			this->button3->Name = L"button3";
 			this->button3->Size = System::Drawing::Size(101, 35);
@@ -340,7 +341,7 @@ namespace Regedit {
 			this->button3->Text = L"Удалить";
 			this->button3->UseVisualStyleBackColor = true;
 			this->button3->Click += gcnew System::EventHandler(this, &MyForm::button3_Click);
-			 
+			
 			// button5
 			 
 			this->button5->Location = System::Drawing::Point(190, 263);
@@ -351,14 +352,14 @@ namespace Regedit {
 			this->button5->UseVisualStyleBackColor = true;
 			this->button5->Click += gcnew System::EventHandler(this, &MyForm::button5_Click);
 			 
-			// textBox3
-			 
+			//
+			
 			this->textBox3->Location = System::Drawing::Point(191, 296);
 			this->textBox3->Name = L"textBox3";
 			this->textBox3->Size = System::Drawing::Size(100, 20);
 			this->textBox3->TabIndex = 24;
 			
-			// label3
+			//
 			 
 			this->label3->AutoSize = true;
 			this->label3->Location = System::Drawing::Point(297, 299);
@@ -367,9 +368,8 @@ namespace Regedit {
 			this->label3->TabIndex = 25;
 			this->label3->Text = L"Введите имя";
 			 
-
 			// button6
-			
+			 
 			this->button6->Location = System::Drawing::Point(297, 222);
 			this->button6->Name = L"button6";
 			this->button6->Size = System::Drawing::Size(101, 35);
@@ -377,11 +377,9 @@ namespace Regedit {
 			this->button6->Text = L"Создать";
 			this->button6->UseVisualStyleBackColor = true;
 			this->button6->Click += gcnew System::EventHandler(this, &MyForm::button6_Click);
-			
+			 
 			// MyForm
-			
-		
-	
+			 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(623, 382);
@@ -418,10 +416,6 @@ namespace Regedit {
 			this->PerformLayout();
 
 		}
-
-
-//  файлик add о.о
-
 #pragma endregion
 
 	private: System::Void button1_Click(System::Object^  sender, System::EventArgs^  e) {
@@ -433,7 +427,7 @@ namespace Regedit {
 			 }
 	private: System::Void MyForm_Load(System::Object^  sender, System::EventArgs^  e) {
 				 
-				 // creating name for section
+				
 				 String ^st = Registry::ClassesRoot->Name; 
 				 String ^st_2 = Registry::CurrentConfig->Name;
 				 String ^st_3 = Registry::CurrentUser->Name;
@@ -441,9 +435,6 @@ namespace Regedit {
 				 String ^st_5 = Registry::LocalMachine->Name;
 
 
-
-		
-				 // view name section
 				 TreeNode ^node = treeView1->Nodes->Add(st);
 				 
 				 array <String^>^stSubSection = Registry::ClassesRoot->GetSubKeyNames();
@@ -684,7 +675,7 @@ private: System::Void button2_Click(System::Object^  sender, System::EventArgs^ 
 		 }
 private: System::Void справкаToolStripMenuItem_Click(System::Object^  sender, System::EventArgs^  e) {
 						
-			 MessageBox::Show("Курсовой проект «Редактор реестра с возможностью поиска по регулярным выражениям»по дисциплине «Системное программное обеспечение вычислительных машин»");
+			 MessageBox::Show("Курсовой проект «Редактор реестра с возможностью поиска по регулярным выражениям» по дисциплине «Системное программное обеспечение вычислительных машин» Developer Kate Brehunets. kate.doca@gmail.com");
 			 
 
 		 }
